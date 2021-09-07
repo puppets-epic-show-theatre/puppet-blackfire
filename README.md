@@ -1,5 +1,4 @@
-[![Build Status](https://travis-ci.org/s12v/puppet-blackfire.svg?branch=master)](https://travis-ci.org/s12v/puppet-blackfire)
-[![Puppet Forge](https://img.shields.io/puppetforge/dt/s12v/blackfire.svg)](https://forge.puppetlabs.com/s12v/blackfire)
+This module was forked from [s12v-blackfire](https://forge.puppet.com/s12v-blackfire).
 
 # blackfire
 
@@ -39,10 +38,10 @@ The module includes a single public class `blackfire`.
 You need to provide at least `server_id` and `server_token` parameters.
 Also you might want to subscribe your service to be restarted when configuration has changed:
 ```puppet
-class { 'blackfire':
-	server_id    => 'b54114a9-df8a-563b-8ba3-e5457155010e',
-	server_token => '7315b1cf617bf51575ba463e813156ed97c85d8ca5c5691db37bbfe36a622a4f',
-    notify => Service['php5-fpm']
+class { 'blackfire': 
+        server_id    => 'b54114a9-df8a-563b-8ba3-e5457155010e', 
+        server_token => '7315b1cf617bf51575ba463e813156ed97c85d8ca5c5691db37bbfe36a622a4f', 
+        notify => Service['php5-fpm']
 }
 ```
 You can get these parameters on https://blackfire.io/account/credentials.
@@ -51,15 +50,15 @@ You can get these parameters on https://blackfire.io/account/credentials.
 
 If you want to provide additional parameters to Agent or PHP extension:
 ```puppet
-class { 'blackfire':
-	server_id    => 'b54114a9-df8a-563b-8ba3-e5457155010e',
-	server_token => '7315b1cf617bf51575ba463e813156ed97c85d8ca5c5691db37bbfe36a622a4f',
-	agent => {
-		log_level => 2
-	},
-	php => {
-		log_level => 3
-	}
+class { 'blackfire': 
+        server_id    => 'b54114a9-df8a-563b-8ba3-e5457155010e', 
+        server_token => '7315b1cf617bf51575ba463e813156ed97c85d8ca5c5691db37bbfe36a622a4f', 
+        agent => { 
+           log_level => 2 
+        }, 
+        php => { 
+           log_level => 3 
+        }
 }
 ```
 
@@ -114,9 +113,7 @@ class { 'blackfire':
 
 This module is currently tested on:
 
- - Ubuntu (16.04, 14.04, 12.04, 10.04)
- - Centos (7.0, 6.6)
- - Debian (8.0, 7.8, 6.0)
+ - Debian (9, 10)
 
 It may work on other distros.
 
@@ -124,12 +121,6 @@ It may work on other distros.
 
 ### Module testing
 
- - `bundle exec rake validate` - Check syntax of Ruby files and call :syntax and :metadata / Validate manifests, templates, and ruby files 
- - `bundle exec rake lint` - Check puppet manifests with puppet-lint / Run puppet-lint
- - `bundle exec rake spec` - Run spec tests in a clean fixtures directory (using [spec_helper](https://github.com/puppetlabs/puppetlabs_spec_helper))
-
-### Acceptance testing with beaker
-
- - `bundle exec rake beaker_nodes` - List available [beaker](https://github.com/puppetlabs/beaker) nodesets
- - `BLACKFIRE_SERVER_ID=... BLACKFIRE_SERVER_TOKEN=... bundle exec rake beaker` - Run beaker acceptance tests (default nodeset)
- - `BEAKER_set=centos-70-x64 BLACKFIRE_SERVER_ID=... BLACKFIRE_SERVER_TOKEN=... bundle exec rake beaker` - Run beaker acceptance tests for the nodeset
+ - `pdk validate` - Check syntax of Ruby files and call :syntax and :metadata / Validate manifests, templates, and ruby files
+ - `pdk test unit` - Run unit tests
+ 
