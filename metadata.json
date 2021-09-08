@@ -23,13 +23,13 @@
   ],
   "operatingsystem_support": [
     {
-      "operatingsystem":"RedHat",
+      "operatingsystem": "RedHat",
       "operatingsystemrelease": [
         "7"
       ]
     },
     {
-      "operatingsystem":"CentOS",
+      "operatingsystem": "CentOS",
       "operatingsystemrelease": [
         "7"
       ]
@@ -51,7 +51,7 @@
   "tags": [
     "php"
   ],
-  "pdk-version": "2.1.0",
-  "template-url": "pdk-default#2.1.0",
-  "template-ref": "tags/2.1.0-0-ga675ea5"
+  "pdk-version": "2.2.0",
+  "template-url": "pdk-default#2.2.0",
+  "template-ref": "tags/2.2.0-0-g2381db6"
 }

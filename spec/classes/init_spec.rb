@@ -8,7 +8,7 @@ describe 'blackfire' do
         it do
           expect {
             is_expected.to compile
-          }.to raise_error(%r{server_id and server_token are required.})
+          }.to raise_error(%r{(.*server_token.*)})
         end
       end
 
