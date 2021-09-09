@@ -2,10 +2,10 @@
 class blackfire (
   String[1] $server_id,
   String[1] $server_token,
-  Hash $agent = $blackfire::params::agent,
-  Hash $php = $blackfire::params::php,
-  Boolean $manage_repo = $blackfire::params::manage_repo
-) inherits blackfire::params {
+  Hash $agent = {},
+  Hash $php = {},
+  Boolean $manage_repo = true,
+) {
 
   anchor { '::blackfire::begin': }
   -> class { '::blackfire::repo': }

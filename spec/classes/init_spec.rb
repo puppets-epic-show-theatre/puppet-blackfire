@@ -8,7 +8,7 @@ describe 'blackfire' do
         it do
           expect {
             is_expected.to compile
-          }.to raise_error(%r{(.*server_token.*)})
+          }.to raise_error(%r{expects a value for parameter})
         end
       end
 
@@ -29,7 +29,7 @@ describe 'blackfire' do
         end
 
         context 'agent package' do
-          it { is_expected.to contain_package('blackfire-agent').with(ensure: 'latest') }
+          it { is_expected.to contain_package('blackfire').with(ensure: 'latest') }
         end
 
         context 'agent configuration' do

@@ -1,3 +1,9 @@
+# 2.0.0 (2021.09.09)
+
+* Added datatypes and datatype checks
+* Switch to blackfire v2 agent
+* Minimal code cleanup
+
 # 1.6.1 (2019.02.18)
 
 * apt keys changed
