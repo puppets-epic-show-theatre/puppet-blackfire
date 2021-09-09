@@ -16,27 +16,29 @@ class blackfire::agent inherits blackfire {
     https_proxy => '',
     ca_cert => '',
     spec => '',
+    package_name => 'blackfire',
   }
   $params = merge($default_params, $::blackfire::agent)
 
   $log_level = 0 + $params['log_level']
 
-  validate_bool($params['manage'])
-  validate_string($params['version'])
-  validate_bool($params['manage_service'])
-  validate_string($params['running'])
-  validate_string($params['server_id'])
-  validate_string($params['server_token'])
-  validate_string($params['socket'])
-  validate_string($params['log_file'])
+  assert_type(Boolean, $params['manage'])
+  assert_type(String, $params['version'])
+  assert_type(Boolean, $params['manage_service'])
+  assert_type(String, $params['service_ensure'])
+  assert_type(String, $params['server_id'])
+  assert_type(String, $params['server_token'])
+  assert_type(String, $params['socket'])
+  assert_type(String, $params['log_file'])
   if $log_level < 1 or $log_level > 4 {
     fail 'Invalid log_level. Valid levels are: 4 - debug, 3 - info, 2 - warning, 1 - error'
   }
-  validate_string($params['collector'])
-  validate_string($params['http_proxy'])
-  validate_string($params['https_proxy'])
-  validate_string($params['ca_cert'])
-  validate_string($params['spec'])
+  assert_type(String, $params['collector'])
+  assert_type(String, $params['http_proxy'])
+  assert_type(String, $params['https_proxy'])
+  assert_type(String, $params['ca_cert'])
+  assert_type(String, $params['spec'])
+  assert_type(String, $params['package_name'])
 
   if $params['manage'] == true {
     anchor { '::blackfire::agent::begin': }
