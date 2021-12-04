@@ -4,9 +4,9 @@
   "author": "Puppets Epic Show Theatre",
   "summary": "Module for managing and configuring Blackfire PHP Profiler",
   "license": "Apache-2.0",
-  "source": "https://github.com/puppets-epic-show-theatre/puppet-curator",
-  "project_page": "https://github.com/puppets-epic-show-theatre/puppet-curator",
-  "issues_url": "https://github.com/puppets-epic-show-theatre/puppet-curator/issues",
+  "source": "https://github.com/puppets-epic-show-theatre/puppet-blackfire",
+  "project_page": "https://github.com/puppets-epic-show-theatre/puppet-blackfire",
+  "issues_url": "https://github.com/puppets-epic-show-theatre/puppet-blackfire/issues",
   "dependencies": [
     {
       "name": "puppetlabs/apt",
